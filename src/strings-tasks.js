@@ -343,8 +343,18 @@ function countVowels(str) {
  *   isPalindrome('apple') => false
  *   isPalindrome('No lemon, no melon') => true
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  let updateStr = str.replaceAll(' ', '');
+  updateStr = updateStr.replaceAll('!', '');
+  updateStr = updateStr.replaceAll(',', '');
+  updateStr = updateStr.replaceAll('?', '');
+  const len = updateStr.length;
+  for (let i = 0; i < len / 2; i += 1) {
+    if (updateStr[i].toLowerCase() !== updateStr[len - 1 - i].toLowerCase()) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /**
