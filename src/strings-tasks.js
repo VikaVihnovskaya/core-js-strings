@@ -455,8 +455,8 @@ function getStringFromTemplate(firstName, lastName) {
  */
 function extractNameFromTemplate(value) {
   const greeting = value.indexOf(',');
-  const delimeter = value.indexOf('!');
-  return value.substring(greeting + 1, delimeter).trim();
+  const delimiter = value.indexOf('!');
+  return value.substring(greeting + 1, delimiter).trim();
 }
 
 /**
@@ -470,8 +470,8 @@ function extractNameFromTemplate(value) {
  *   unbracketTag('<span>') => 'span'
  *   unbracketTag('<a>') => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  return str.substring(1, str.length - 1).trim();
 }
 
 /**
